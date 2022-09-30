@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Chamado implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -26,20 +26,20 @@ public class Chamado implements Serializable {
 
 	@JsonFormat(pattern = "dd/mm/yyyy")
 	private LocalDate dataAbertura = LocalDate.now();
-	
+
 	@JsonFormat(pattern = "dd/mm/yyyy")
 	private LocalDate dataFechamento;
 	private Prioridade prioridade;
 	private Status status;
 	private String titulo;
 	private String observacoes;
-	
+
 	@ManyToOne
-	@JoinColumn(name= "tecnico_id")
+	@JoinColumn(name = "tecnico_id")
 	private Tecnico tecnico;
-	
+
 	@ManyToOne
-	@JoinColumn(name= "cliente_id")
+	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
 
 	public Chamado(Integer id, Prioridade prioridade, Status status, String titulo, String observacoes, Tecnico tecnico,
@@ -146,5 +146,4 @@ public class Chamado implements Serializable {
 		Chamado other = (Chamado) obj;
 		return Objects.equals(id, other.id);
 	}
- 
 }
