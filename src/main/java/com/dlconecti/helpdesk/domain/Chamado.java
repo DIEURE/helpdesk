@@ -146,5 +146,5 @@ public class Chamado implements Serializable {
 		Chamado other = (Chamado) obj;
 		return Objects.equals(id, other.id);
 	}
-
+ 
 }
